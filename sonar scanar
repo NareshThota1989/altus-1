@@ -1,0 +1,29 @@
+Installing SonarQube Scanner
+Download latest version of SonarQube Scanner from it’s [official source][sonarqube]
+$ wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip
+
+Unzip SonarQube Scanner downloaded source
+$ unzip sonar-runner-dist-2.4.zip
+
+Move it to your <installation-directory> , for us it’s /opt/sonar
+$ sudo mv sonar-runner-dist-2.4 /opt/sonar/
+
+Configuring SonarQube Scanner
+Open SonarQube Scanner configuration file <instllation-directory>/conf/sonar-runner.properties
+$ cd /opt/sonar/sonar-runner-dist-2.4/conf
+$ sudo nano sonar-runner.properties
+
+Modify Global setting for SonarQube Scanner
+#----- Default SonarQube server
+#sonar.host.url=http://localhost:9000
+
+Add SonarQube Scanners path to your /etc/environment file
+$ sudo nano /etc/environment
+
+Add your SonarQube Scanner bin path to /etc/enviroment
+/opt/sonar/sonar-runner-dist-2.4/bin
+
+You successfully configured SonarQube Scanner
+Verify your Installation
+Run command
+ $ sonar-scanner 
